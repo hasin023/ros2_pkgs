@@ -1,0 +1,48 @@
+# ros2_pkgs
+To create a pkg, we need to follow these steps
+
+```bash
+cd ~/ros2_ws/src
+
+ros2 pkg create --build-type ament_python --license Apache-2.0 --node-name <node_name> <package_name>
+```
+
+Next, we need to build the pkg
+
+```bash
+cd ~/ros2_ws
+
+colcon build
+```
+
+If we have any previously built pkg that we want to get rid of, we simply need to remove the /build /install /log directories.
+
+```bash
+rm -rf src/<package_name>
+
+rm -rf build/ install/ log/
+
+colcon build
+```
+
+If the build fails, we might need to downgrade our python setuptools version.
+
+```bash
+apt install python3-pip
+
+pip3 list | grep setuptools
+
+pip3 install setuptools==58.2.0
+```
+
+Once the pkg is build, we can find it inside the install directory, we need to first source the local setup script inside the install directory.
+
+```bash
+source install/local_setup.bash
+```
+
+Finally, we can now run the pkg
+
+```bash
+ros2 run <package_name> <node_name>
+```
