@@ -23,6 +23,8 @@ rm -rf src/<package_name>
 rm -rf build/ install/ log/
 
 colcon build
+
+colcon build --packages-select <package_name>      // If we want to build a specific pkg
 ```
 
 If the build fails, we might need to downgrade our python setuptools version.

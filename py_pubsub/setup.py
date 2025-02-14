@@ -1,10 +1,10 @@
 from setuptools import find_packages, setup
 
-package_name = 'bay_goodbye'
+package_name = 'py_pubsub'
 
 setup(
     name=package_name,
-    version='0.1.0',
+    version='0.0.0',
     packages=find_packages(exclude=['test']),
     data_files=[
         ('share/ament_index/resource_index/packages',
@@ -15,12 +15,13 @@ setup(
     zip_safe=True,
     maintainer='hasin023',
     maintainer_email='hasinmahtab.alvee@gmail.com',
-    description='A package to say goodbye to the world',
+    description='A simple publisher and subscriber in Python',
     license='Apache-2.0',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'bay_node = bay_goodbye.bay_node:main'
+            'talker = py_pubsub.publisher_member_function:main',
+            'listener = py_pubsub.subscriber_member_function:main',
         ],
     },
 )
