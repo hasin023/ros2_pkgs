@@ -2,7 +2,7 @@
 To create a pkg, we need to follow these steps
 
 ```bash
-cd ~/ros2_ws/src
+cd /home/ros2_ws/src
 
 ros2 pkg create --build-type ament_python --license Apache-2.0 --node-name <node_name> <package_name>
 ```
@@ -16,7 +16,7 @@ rosdep install -i --from-path src --rosdistro humble -y
 Next, we need to build the pkg
 
 ```bash
-cd ~/ros2_ws
+cd /home/ros2_ws
 
 colcon build
 ```
