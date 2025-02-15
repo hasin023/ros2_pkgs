@@ -7,6 +7,12 @@ cd ~/ros2_ws/src
 ros2 pkg create --build-type ament_python --license Apache-2.0 --node-name <node_name> <package_name>
 ```
 
+We need to ensure that all our dependencies are installed inside our workspace, before we are building our pkg
+
+```bash
+rosdep install -i --from-path src --rosdistro humble -y
+```
+
 Next, we need to build the pkg
 
 ```bash
